@@ -10,12 +10,83 @@
 </head>
 <body>
     <div class="page"> 
-        <header class="header"> TESTING TESTING 123 </header>
-        <main class="contet">
-            <section class="profile"></section>
-            <section class="cards"></section>
+        <header class="header"> 
+            <img src="images/Logo.svg" alt="Spots Logo" class="header__logo">
+        </header>
+        <main class="content">
+            <section class="profile">
+                <img src="./images/avatar.jpg" alt="Image of Current Profile" class="profile__image">
+                <div class = "profile__column">
+                    <div class = "profile__column-title">
+                        <h2 class="profile__title"> Bessie Coleman </h2>
+                        <p class="profile__subtitle"> Civil Aviator </p>
+                    </div>
+                    <div class="profile__edit-button">
+                        <img src="./images/edit.svg" alt="image of pencil" class="profile__edit-button_icon">
+                        <p class="profile__edit-button_caption">Edit Profile</p>
+                    </div>
+
+                </div>
+                <button class="profile__new-post">
+                    <img src="./images/add.svg" alt="add icon" class="profile__new-post_add-icon">
+                    <p class = "profile__new-post_caption"> New Post </p>
+                </button>
+            </section>
+            <section class="cards">
+                <ul class="cards__list">
+                    <li class="card">
+                        <img src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg" alt="Image by Van Thorens" class="card__image">
+                        <div class="card__content">
+                            <p class="card__description"> Val Thorens </p>
+                            <button class = "card__like-btn"> </button>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="./images/2-photo-by-ceiline-from-pexels.jpg" alt="Image of Restaurant Terrace" class="card__image">
+                        <div class="card__content">
+                            <p class="card__description"> Restaurant Terrace </p>
+                            <button class = "card__like-btn"> </button>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg" alt="Image of Outdoor Cafe" class="card__image">
+                        <div class="card__content">
+                            <p class="card__description"> Outdoor Cafe </p>
+                            <button class = "card__like-btn"> </button>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="./images/4-photo-by-maurice-laschet-from-pexels.jpg" alt="Image of Long Bridge" class="card__image">
+                        <div class="card__content">
+                            <p class="card__description"> A very long bridge, over the forest... </p>
+                            <button class = "card__like-btn"> </button>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg" alt="Image of Tunnel with morning light" class="card__image">
+                        <div class="card__content">
+                            <p class="card__description"> Tunnel with morning light </p>
+                            <button class = "card__like-btn"> </button>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg" alt="Image of Mountain House" class="card__image">
+                        <div class="card__content">
+                            <p class="card__description"> Mountain house </p>
+                            <button class = "card__like-btn"> </button>
+                        </div>
+                    </li>
+                </ul>
+            </section>
         </main>
-        <footer class="footer"></footer>
+        <footer class="footer">
+            <p class= "footer__copyright"> 2023 © Spots </p>
+        </footer>
     </div>
 </body>
 </html>
