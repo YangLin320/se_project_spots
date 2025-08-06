@@ -7,7 +7,7 @@
 .card__image{
     max-width: 100%;
     width:413px;
-    height:auto;
+    height: 413px;
     object-fit: cover;
     border-radius: 8px;
     gap: 12px;
