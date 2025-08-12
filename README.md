@@ -4,7 +4,7 @@ This project is made so all the elements are displayed correctly on popular scre
 
 Spots uses CSS grids and flexbox for the main interface and adapative Web Design for the comfort of mobile users
 
-Github Link: https://github.com/YangLin320/se_project_spots
+Github Link: https://yanglin320.github.io/se_project_spots
 
 https://imgur.com/a/NpZmwON
 
