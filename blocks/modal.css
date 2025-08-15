@@ -1,0 +1,129 @@
+.modal{
+    visibility: hidden;
+    background-color: #00000080;
+    position:fixed;
+    top:0;
+    right:0;
+    bottom: 0;
+    left:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_is-opened{
+    visibility: visible;
+}
+
+.modal__container{
+    background-color:white;
+    width: 730px;
+    height: 408px;
+    border-radius: 8px;
+}
+
+.modal__row{
+    margin: 32px 50px 0 50px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal__title{
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 32px;
+    line-height: 100%;
+    margin:0;
+    padding:0;
+}
+
+.modal__close-btn{
+    background-image: url(../images/Close_Icon.svg);
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    background-size: cover;
+    background-position:center;
+    border:none;
+    margin:0;
+    padding:0;
+}
+
+.modal__form{
+    display: flex;
+    flex-direction: column;
+    margin: 32px 50px 32px 50px;
+}
+
+.modal__input{
+    margin-bottom: 32px;
+    height: 52px;
+    border-radius: 8px;
+    border: 1px solid #21212166;
+}
+
+.modal__input::placeholder{
+    padding: 16px 0 16px 12px;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #2121214D;
+}
+
+.modal__label{
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110%
+    color:#212121B2;
+    margin-bottom: 8px;
+}
+
+.modal__save-btn{
+    width: 156px;
+    height: 52px;
+    background-color: #212121;
+    color:#FCF5E5;
+    border-radius: 8px;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+@media screen and (max-width:568px) {
+    .modal{
+        padding: 0 10px;
+    }
+    
+    .modal__container{
+        height:336px;
+    }
+    .modal__row{
+        margin:12px;
+    }
+    .modal__title{
+        font-size: 20px;
+    }
+
+    .modal__form{
+        margin:12px;
+    }
+
+    .modal__input{
+        height: 48px;
+        margin-bottom: 24px;
+    }
+
+    .modal__input::placeholder{
+        font-size: 16px;
+    }
+
+    .modal__save-btn{
+        width:auto;
+    }
+}
