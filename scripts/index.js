@@ -1,4 +1,5 @@
 const editButton = document.querySelector(".profile__edit-button");
+const newPostButton = document.querySelector(".profile__new-post");
 
 const editModal = document.querySelector("#edit-profile-modal");
 const editCloseButton = editModal.querySelector(".modal__close-btn");
