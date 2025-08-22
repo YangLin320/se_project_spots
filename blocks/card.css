@@ -1,72 +1,71 @@
-.card{
-    max-width: 413px;
-    padding:0;
-    margin:0 0 40px 0;
+.card {
+  max-width: 413px;
+  padding: 0;
+  margin: 0 0 40px 0;
 }
 
-.card__image{
-    max-width: 100%;
-    width:413px;
-    height: 413px;
-    object-fit: cover;
-    border-radius: 8px;
+.card__image {
+  max-width: 100%;
+  width: 413px;
+  height: 413px;
+  object-fit: cover;
+  border-radius: 8px;
 }
-.card__content{
-    margin-top: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.card__description{
-    font-family: Poppins, Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 20px;
-    line-height: 120%;
-    color:#212121;
-    text-overflow: ellipsis;
-    white-space: nowrap;  
-    overflow: hidden;      
-    max-width: 350px;
-    margin:0; 
-}
-.card__like-btn{
-    width: 23px;
-    height: 20px;
-    background-image: url(../images/Like.svg);
-    border:none;
-    background-color: transparent;
-    opacity: 40%;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+.card__content {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.card__like-btn:hover{
-    opacity:100%;
-    cursor: pointer;
+.card__description {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 120%;
+  color: #212121;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 350px;
+  margin: 0;
+}
+.card__like-btn {
+  width: 23px;
+  height: 20px;
+  background-image: url(../images/Like.svg);
+  border: none;
+  background-color: transparent;
+  opacity: 40%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-@media screen and (max-width:568px) {
-    .card{
-        max-width: 288px;
-        margin-bottom: 20px;
-    }
+.card__like-btn:hover {
+  opacity: 100%;
+  cursor: pointer;
+}
 
-    .card__image{
-        height:288px;
-    }
+@media screen and (max-width: 568px) {
+  .card {
+    max-width: 288px;
+    margin-bottom: 20px;
+  }
 
-    .card__description{
-        font-size: 16px;
-        line-height:100%;
-        max-width: 250px;
-    }
+  .card__image {
+    height: 288px;
+  }
 
-    .card__like-btn{
-        width: 20px;
-        height: 18px;
-    }
-    
+  .card__description {
+    font-size: 16px;
+    line-height: 100%;
+    max-width: 250px;
+  }
+
+  .card__like-btn {
+    width: 20px;
+    height: 18px;
+  }
 }
