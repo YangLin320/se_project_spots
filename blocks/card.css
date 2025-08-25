@@ -2,6 +2,7 @@
   max-width: 413px;
   padding: 0;
   margin: 0 0 40px 0;
+  position:relative;
 }
 
 .card__image {
@@ -10,6 +11,10 @@
   height: 413px;
   object-fit: cover;
   border-radius: 8px;
+}
+
+.card__image:hover{
+  cursor:pointer;
 }
 .card__content {
   margin-top: 12px;
@@ -31,6 +36,13 @@
   max-width: 350px;
   margin: 0;
 }
+
+.card__liked-btn{
+  background-image: url(../images/Liked.svg);
+  opacity:1;
+  /*this doesn't work and I have no idea why */
+}
+
 .card__like-btn {
   width: 23px;
   height: 20px;
@@ -47,6 +59,24 @@
   opacity: 100%;
   cursor: pointer;
 }
+
+.card__trash-btn{
+  height: 32px;
+  width: 32px;
+  background-image: url(../images/trash.png);
+  position:absolute;
+  border:none;
+  top:10px;
+  right:10px;
+  background-color: transparent;
+}
+
+.card__trash-btn:hover{
+  background-image: url(../images/trash_hover.png);
+  transition: ease-in-out 0.5s;
+  cursor: pointer;
+}
+
 
 @media screen and (max-width: 568px) {
   .card {

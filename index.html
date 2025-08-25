@@ -1,123 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spots</title>
-    <meta name="description" content="An interactive social media web application where users can add and remove photos, like photos of other users, and make a few minor adjustments to their profile.">
-    <link rel="stylesheet" href="./pages/index.css">
-    <link rel="icon" href="favicon.ico">
-</head>
-<body>
-    <div class="page"> 
-        <header class="header"> 
-            <img src="images/Logo.svg" alt="Spots Logo" class="header__logo">
-        </header>
-        <main class="content">
-            <section class="profile">
-                <img src="./images/avatar.jpg" alt="Image of Current Profile" class="profile__image">
-                <div class = "profile__column">
-                    <div class = "profile__column-title">
-                        <h1 class="profile__title"> Bessie Coleman </h1>
-                        <p class="profile__subtitle"> Civil Aviator </p>
-                    </div>
-                    <button class="profile__edit-button" type="button">
-                        <img src="./images/edit.svg" alt="image of pencil">
-                        Edit Profile
-                    </button>
-                </div>
-                <button class="profile__new-post" type="button">
-                    <img src="./images/add.svg" alt="add icon">
-                    New Post
-                </button>
-            </section>
-            <section class="cards">
-                <ul class="cards__list">
-                    <li class="card">
-                        <img src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg" alt="Image by Van Thorens" class="card__image">
-                        <div class="card__content">
-                            <h2 class="card__description"> Val Thorens </h2>
-                            <button class = "card__like-btn" type="button"> </button>
-                        </div>
-                    </li>
-
-                    <li class="card">
-                        <img src="./images/2-photo-by-ceiline-from-pexels.jpg" alt="Image of Restaurant Terrace" class="card__image">
-                        <div class="card__content">
-                            <h2 class="card__description"> Restaurant Terrace </h2>
-                            <button class = "card__like-btn" type="button"> </button>
-                        </div>
-                    </li>
-
-                    <li class="card">
-                        <img src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg" alt="Image of Outdoor Cafe" class="card__image">
-                        <div class="card__content">
-                            <h2 class="card__description"> Outdoor Cafe </h2>
-                            <button class = "card__like-btn" type="button"> </button>
-                        </div>
-                    </li>
-
-                    <li class="card">
-                        <img src="./images/4-photo-by-maurice-laschet-from-pexels.jpg" alt="Image of Long Bridge" class="card__image">
-                        <div class="card__content">
-                            <h2 class="card__description"> A very long bridge, over the forest... </h2>
-                            <button class = "card__like-btn" type="button"> </button>
-                        </div>
-                    </li>
-
-                    <li class="card">
-                        <img src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg" alt="Image of Tunnel with morning light" class="card__image">
-                        <div class="card__content">
-                            <h2 class="card__description"> Tunnel with morning light </h2>
-                            <button class = "card__like-btn" type="button"> </button>
-                        </div>
-                    </li>
-
-                    <li class="card">
-                        <img src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg" alt="Image of Mountain House" class="card__image">
-                        <div class="card__content">
-                            <h2 class="card__description"> Mountain house </h2>
-                            <button class = "card__like-btn" type="button"> </button>
-                        </div>
-                    </li>
-                </ul>
-            </section>
-        </main>
-        <footer class="footer">
-            <p class= "footer__copyright"> 2025 © Spots </p>
-        </footer>
-        <div class="modal" id = "edit-profile-modal">
-            <div class="modal__container">
-                <div class="modal__row">
-                    <h2 class="modal__title"> Edit Profile </h2>
-                    <button class="modal__close-btn" type = "button"></button>
-                </div>
-                <form class="modal__form">
-                    <label for="profile_name_input" class="modal__label">Name</label>
-                    <input id = "profile_name_input" type="text" class="modal__input" placeholder="Type your Name">
-                    <label for="profile_description_input" class="modal__label">Description</label>
-                    <input id = "profile_description_input" type="text" class="modal__input" placeholder="Describe Yourself">
-                    <button class="modal__save-btn" type = "submit"> Save </button>
-                </form>
+    <meta
+      name="description"
+      content="An interactive social media web application where users can add and remove photos, like photos of other users, and make a few minor adjustments to their profile."
+    />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="icon" href="favicon.ico" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img src="images/Logo.svg" alt="Spots Logo" class="header__logo" />
+      </header>
+      <main class="content">
+        <section class="profile">
+          <img
+            src="./images/avatar.jpg"
+            alt="Image of Current Profile"
+            class="profile__image"
+          />
+          <div class="profile__column">
+            <div class="profile__column-title">
+              <h1 class="profile__title">Bessie Coleman</h1>
+              <p class="profile__subtitle">Civil Aviator</p>
             </div>
+            <button class="profile__edit-button" type="button">
+              <img src="./images/edit.svg" alt="image of pencil" />
+              Edit Profile
+            </button>
+          </div>
+          <button class="profile__new-post" type="button">
+            <img src="./images/add.svg" alt="add icon" />
+            New Post
+          </button>
+        </section>
+        <section class="cards">
+          <ul class="cards__list"></ul>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">2025 © Spots</p>
+      </footer>
+      <div class="modal" id="edit-profile-modal">
+        <div class="modal__container">
+          <div class="modal__row">
+            <h2 class="modal__title">Edit Profile</h2>
+            <button class="modal__close-btn" type="button"></button>
+          </div>
+          <form class="modal__form">
+            <label for="profile_name_input" class="modal__label">Name</label>
+            <input
+              id="profile_name_input"
+              type="text"
+              class="modal__input"
+              placeholder="Type your Name"
+            />
+            <label for="profile_description_input" class="modal__label"
+              >Description</label
+            >
+            <input
+              id="profile_description_input"
+              type="text"
+              class="modal__input"
+              placeholder="Describe Yourself"
+            />
+            <button class="modal__save-btn" type="submit">Save</button>
+          </form>
         </div>
+      </div>
 
-        <div class="modal" id = "new-post-modal">
-            <div class="modal__container">
-                <div class="modal__row">
-                    <h2 class="modal__title"> New Post </h2>
-                    <button class="modal__close-btn" type = "button"></button>
-                </div>
-                <form class="modal__form">
-                    <label for="profile_image_input" class="modal__label">Image Link</label>
-                    <input id = "profile_image_input" type="text" class="modal__input" placeholder="Paste a link to the picture">
-                    <label for="profile_caption_input" class="modal__label">caption</label>
-                    <input id = "profile_caption_input" type="text" class="modal__input" placeholder="Type your caption">
-                    <button class="modal__save-btn" type = "submit"> Save </button>
-                </form>
-            </div>
+      <div class="modal" id="new-post-modal">
+        <div class="modal__container">
+          <div class="modal__row">
+            <h2 class="modal__title">New Post</h2>
+            <button class="modal__close-btn" type="button"></button>
+          </div>
+          <form class="modal__form">
+            <label for="profile_image_input" class="modal__label"
+              >Image Link</label
+            >
+            <input
+              id="profile_image_input"
+              type="text"
+              class="modal__input"
+              placeholder="Paste a link to the picture"
+            />
+            <label for="profile_caption_input" class="modal__label"
+              >caption</label
+            >
+            <input
+              id="profile_caption_input"
+              type="text"
+              class="modal__input"
+              placeholder="Type your caption"
+            />
+            <button class="modal__save-btn" type="submit">Save</button>
+          </form>
         </div>
+      </div>
+
+      <div class="modal" id="preview__modal">
+        <div class="modal__image-container">
+          <img class="modal__image" src="" alt="" />
+          <button class="modal__close"></button>
+          <div class="modal__caption"></div>
+        </div>
+      </div>
     </div>
+    <template id="card-template">
+      <li class="card">
+        <img class="card__image" />
+        <button class="card__trash-btn"></button>
+        <div class="card__content">
+          <h2 class="card__description"></h2>
+          <button class="card__like-btn" type="button"></button>
+        </div>
+      </li>
+    </template>
     <script src="./scripts/index.js"></script>
-</body>
+  </body>
 </html>
