@@ -77,7 +77,7 @@ function getCardElement(data) {
 const previewModal = document.querySelector("#preview__modal");
 const previewModalImage = previewModal.querySelector(".modal__image");
 const previewModalCaption = previewModal.querySelector(".modal__caption");
-const previewModalCloseBtn = previewModal.querySelector(".modal__close");
+const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 
 previewModalCloseBtn.addEventListener("click", function () {
   closeModal(previewModal);

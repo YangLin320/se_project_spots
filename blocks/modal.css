@@ -121,20 +121,19 @@
 
 .modal__caption{
   width: 135px; 
-  height: 32;
+  padding: 4px 8px;
   border-radius: 8px;
   background-color: #212121;
   color:#FFFFFF;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
-  font-style: Medium;
+  font-style: normal;
   font-size: 20px;
   line-height: 120%;
-  text-align: center;
-
+  text-align: left;
 }
 
-.modal__close{
+.modal__close-btn_type_preview{
   background-image: url(../images/Close_Icon2.svg);
   height: 40px;
   width: 40px;
