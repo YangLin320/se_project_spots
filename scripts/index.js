@@ -111,6 +111,8 @@ editProfileButton.addEventListener("click", function () {
   openModal(editProfileModal);
   editProfileName.value = profileName.textContent;
   editProfileDescription.value = profileDescription.textContent;
+
+  resetValidation(editProfileForm, settings);
 });
 
 editProfileCloseButton.addEventListener("click", function () {

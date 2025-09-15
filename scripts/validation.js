@@ -24,18 +24,17 @@ const disableButton = (buttonElement) => {
 }
 
 
-const hideInputError = (config,form, inputElement) => {
-    const errorElement = document.querySelector(`#${inputElement.id}-error`);
-    errorElement.textContent = "";
-    inputElement.classList.remove(config.inputErrorClass);
-    
-}
+const showInputError = (config, form, inputElement, message) => {
+  const errorElement = document.querySelector(`#${inputElement.id}-error`);
+  errorElement.textContent = message;
+  inputElement.classList.add(config.inputErrorClass);
+};
 
-const showInputError = (form, inputElement, message) => {
-    const errorElement = document.querySelector(`#${inputElement.id}-error`);
-    errorElement.textContent = message;
-    inputElement.classList.add(config.inputErrorClass);
-}
+const hideInputError = (config, form, inputElement) => {
+  const errorElement = document.querySelector(`#${inputElement.id}-error`);
+  errorElement.textContent = "";
+  inputElement.classList.remove(config.inputErrorClass);
+};
 
 const checkInputValidity = (config,form, inputElement) =>{
     if(!inputElement.validity.valid){
@@ -57,6 +56,16 @@ const setEventListeners = (config,form)=>{
         });
     });
 };
+
+function resetValidation(form, config) {
+  const inputList = Array.from(form.querySelectorAll(config.inputSelector));
+  inputList.forEach((inputElement) => {
+    hideInputError(config, form, inputElement);
+  });
+
+  const buttonElement = form.querySelector(config.submitButtonSelector);
+  disableButton(buttonElement); 
+}
 
 const enableValidation = (config)=>{
     const formList = document.querySelectorAll(config.formSelector);
