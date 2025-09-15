@@ -147,23 +147,23 @@ newPostForm.addEventListener("submit", function (evt) {
 
 function openModal(modal){
   modal.classList.add("modal_is-opened");
-  modal.addEventListener("keydown", escapeCloser);
+  document.addEventListener("keydown", handleEscape(modal));
 }
 
-const escapeCloser = (evt) =>{
+const handleEscape = (evt, modal) =>{
   if(evt.key == 'Escape'){
-    closeModal(evt.target);
+    closeModal(modal);
   }
 }
 
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
-  modal.removeEventListener("keydown", escapeCloser);
+  modal.removeEventListener("keydown", handleEscape);
 }
 
-initialCards.forEach(function (x) {
-  getCardElement(x);
+initialCards.forEach(function (card) {
+  getCardElement(card);
 });
 
 //For closing when clicking on card overlay
@@ -171,7 +171,7 @@ const setModalListeners = () =>{
   const modals = document.querySelectorAll(".modal");
   modals.forEach(modal => {
     modal.addEventListener("click", function(evt){
-      if(!evt.target == modal){
+      if(evt.target == modal){
         closeModal(modal);
       }
     })
