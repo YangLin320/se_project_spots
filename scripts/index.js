@@ -142,16 +142,40 @@ newPostForm.addEventListener("submit", function (evt) {
   getCardElement(newPost);
   closeModal(newPostModal);
   evt.target.reset();
+  disableButton(evt.target.querySelector(".modal__save-btn"));
 });
 
-function openModal(modal) {
+function openModal(modal){
   modal.classList.add("modal_is-opened");
+  modal.addEventListener("keydown", escapeCloser);
 }
+
+const escapeCloser = (evt) =>{
+  if(evt.key == 'Escape'){
+    closeModal(evt.target);
+  }
+}
+
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  modal.removeEventListener("keydown", escapeCloser);
 }
 
 initialCards.forEach(function (x) {
   getCardElement(x);
 });
+
+//For closing when clicking on card overlay
+const setModalListeners = () =>{
+  const modals = document.querySelectorAll(".modal");
+  modals.forEach(modal => {
+    modal.addEventListener("click", function(evt){
+      if(!evt.target == modal){
+        closeModal(modal);
+      }
+    })
+  })
+}
+
+setModalListeners();
