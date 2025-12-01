@@ -8,33 +8,47 @@
       name="description"
       content="An interactive social media web application where users can add and remove photos, like photos of other users, and make a few minor adjustments to their profile."
     />
-    <link rel="stylesheet" href="./pages/index.css" />
     <link rel="icon" href="favicon.ico" />
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img src="images/Logo.svg" alt="Spots Logo" class="header__logo" />
+        <img
+          src="<%=require('./images/Logo.svg')%>"
+          alt="Spots Logo"
+          class="header__logo"
+        />
       </header>
       <main class="content">
         <section class="profile">
-          <img
-            src="./images/avatar.jpg"
-            alt="Image of Current Profile"
-            class="profile__image"
-          />
+          <div class="profile__avatar-container">
+            <button class="profile__avatar-btn">
+              <div class="profile__avatar-edit-container">
+                <img
+                  src="<%=require('./images/edit_profile-light.svg')%>"
+                  alt="Pencil Icon"
+                  class="profile__avatar-edit"
+                />
+                Edit Profile
+              </div>
+            </button>
+            <img src="" alt="Image of Current Profile" class="profile__image" />
+          </div>
           <div class="profile__column">
             <div class="profile__column-title">
-              <h1 class="profile__title">Bessie Coleman</h1>
-              <p class="profile__subtitle">Civil Aviator</p>
+              <h1 class="profile__title"></h1>
+              <p class="profile__subtitle"></p>
             </div>
             <button class="profile__edit-button" type="button">
-              <img src="./images/edit.svg" alt="image of pencil" />
+              <img
+                src="<%=require('./images/edit.svg')%>"
+                alt="image of pencil"
+              />
               Edit Profile
             </button>
           </div>
           <button class="profile__new-post" type="button">
-            <img src="./images/add.svg" alt="add icon" />
+            <img src="<%=require('./images/add.svg')%>" alt="add icon" />
             New Post
           </button>
         </section>
@@ -59,10 +73,10 @@
               class="modal__input"
               placeholder="Type your Name"
               required
-              minlength = "2"
-              maxlength= "40"
+              minlength="2"
+              maxlength="40"
             />
-            <div class="modal__error" id = "profile_name_input-error"></div>
+            <div class="modal__error" id="profile_name_input-error"></div>
             <label for="profile_description_input" class="modal__label"
               >Description</label
             >
@@ -75,7 +89,10 @@
               minlength="2"
               maxlength="200"
             />
-            <div class="modal__error" id = "profile_description_input-error"></div>
+            <div
+              class="modal__error"
+              id="profile_description_input-error"
+            ></div>
             <button class="modal__save-btn" type="submit">Save</button>
           </form>
         </div>
@@ -85,7 +102,11 @@
         <div class="modal__container">
           <div class="modal__row">
             <h2 class="modal__title">New Post</h2>
-            <button class="modal__close-btn" type="button" aria-label="Close Modal"></button>
+            <button
+              class="modal__close-btn"
+              type="button"
+              aria-label="Close Modal"
+            ></button>
           </div>
           <form class="modal__form" novalidate>
             <label for="profile_image_input" class="modal__label"
@@ -93,12 +114,12 @@
             >
             <input
               id="profile_image_input"
-              type = "url"
+              type="url"
               class="modal__input"
               placeholder="Paste a link to the picture"
               required
             />
-            <div class="modal__error" id = "profile_image_input-error"></div>
+            <div class="modal__error" id="profile_image_input-error"></div>
             <label for="profile_caption_input" class="modal__label"
               >caption</label
             >
@@ -111,7 +132,7 @@
               minlength="2"
               maxlength="30"
             />
-            <div class="modal__error" id = "profile_caption_input-error"></div>
+            <div class="modal__error" id="profile_caption_input-error"></div>
             <button class="modal__save-btn" type="submit" disabled>Save</button>
           </form>
         </div>
@@ -120,22 +141,84 @@
       <div class="modal" id="preview__modal">
         <div class="modal__image-container">
           <img class="modal__image" src="#" alt="" />
-          <button class="modal__close-btn modal__close-btn_type_preview" aria-label = "close preview"></button>
+          <button
+            class="modal__close-btn modal__close-btn_type_preview"
+            aria-label="close preview"
+          ></button>
           <div class="modal__caption"></div>
         </div>
       </div>
     </div>
+
+    <div class="modal" id="new-avatar-modal">
+      <div class="modal__container">
+        <div class="modal__row">
+          <h2 class="modal__title">New Avatar</h2>
+          <button
+            class="modal__close-btn"
+            type="button"
+            aria-label="Close Modal"
+          ></button>
+        </div>
+        <form class="modal__form" novalidate>
+          <label for="profile_avatar_input" class="modal__label"
+            >Avatar Link</label
+          >
+          <input
+            id="profile_avatar_input"
+            type="url"
+            class="modal__input"
+            placeholder="Paste a link to the your new avatar"
+            required
+          />
+          <div class="modal__error" id="profile_avatar_input-error"></div>
+          <button class="modal__save-btn" type="submit" disabled>Save</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="delete-card-modal">
+      <div class="modal__container modal__delete">
+        <h2 class="modal__title" style="font-size: 24px; margin-bottom: 32px">
+          Are you sure you want to delete this image?
+        </h2>
+        <button
+          class="modal__close-btn modal__close-btn-delete"
+          type="button"
+          aria-label="Close Modal"
+        ></button>
+        <form class="modal__form">
+          <div class="modal__btn-container">
+            <button
+              class="modal__save-btn modal__save-btn-delete modal__save-btn-delete-btn"
+              type="submit"
+            >
+              Delete
+            </button>
+            <button
+              class="modal__save-btn modal__save-btn-delete"
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <template id="card-template">
       <li class="card">
-        <img class="card__image" src = "#" alt = ""/>
-        <button class="card__trash-btn" aria-label="trash button" type = "button"></button>
+        <img class="card__image" src="#" alt="" />
+        <button
+          class="card__trash-btn"
+          aria-label="trash button"
+          type="button"
+        ></button>
         <div class="card__content">
           <h2 class="card__description"></h2>
           <button class="card__like-btn" type="button"></button>
         </div>
       </li>
     </template>
-    <script src="./scripts/index.js"></script>
-    <script src = "./scripts/validation.js"></script>
   </body>
 </html>

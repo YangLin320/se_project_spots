@@ -175,6 +175,41 @@ top:-24px;
   opacity: 1;
 }
 
+.modal__delete{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  position:relative;
+}
+
+.modal__close-btn-delete{
+  background-image: url(../images/Close_Icon2.svg);
+  position:absolute;
+  right:-52px;
+  top:0;
+  opacity: 1;
+}
+
+.modal__save-btn-delete{
+  margin:20px;
+  color: #212121;
+  background-color:white;
+  border: 1px solid #212121;
+}
+
+.modal__save-btn-delete:hover{
+  background-color: #212121;
+  color:white;
+}
+
+.modal__save-btn-delete-btn{
+  background-color: #FF6565;
+}
+.modal__save-btn-delete-btn:hover{
+  background-color: #FF3333;
+  color: #212121;
+}
+
 @media screen and (max-width: 568px) {
   .modal {
     padding: 0 10px;
