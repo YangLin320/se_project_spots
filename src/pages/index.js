@@ -154,8 +154,18 @@ const newAvatarForm = newAvatarModal.querySelector(".modal__form");
 /* For Delete Card Modal */
 
 const deleteModal = document.querySelector("#delete-card-modal");
+const deleteModalCloseButton = deleteModal.querySelector(".modal__close-btn");
+const deleteModalCancelButton = deleteModal.querySelector(".modal__save-btn-cancel-btn");
 const deleteForm = deleteModal.querySelector(".modal__form");
 let selectedCard, selectedCardId;
+
+deleteModalCloseButton.addEventListener("click", ()=>{
+  closeModal(deleteModal);
+});
+
+deleteModalCancelButton.addEventListener("click", ()=>{
+  closeModal(deleteModal);
+});
 
 deleteForm.addEventListener("submit", (evt) => {
   handleDeleteSubmit(evt);
@@ -207,13 +217,13 @@ editProfileCloseButton.addEventListener("click", function () {
 editProfileForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
+  submitBtn.textContent = "Saving..."
   api
     .editUserInfo({
       name: editProfileName.value,
       about: editProfileDescription.value,
     })
     .then((data) => {
-      submitBtn.textContent = "Saving..."
       profileName.textContent = data.name;
       profileDescription.textContent = data.about;
       closeModal(editProfileModal);
@@ -236,18 +246,18 @@ newAvatarCloseButton.addEventListener("click", function () {
 newAvatarForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
+  submitBtn.textContent = "Saving...";
   api
     .editAvatarLink(newAvatarLink.value)
     .then((data) => {
-      submitBtn.textContent = "Saving...";
       userAvatar.src = data.avatar;
       evt.target.reset();
-      disableButton(submitBtn);
       closeModal(newAvatarModal);
     })
     .catch(console.error)
     .finally(()=>{
       submitBtn.textContent = "Save";
+      disableButton(submitBtn);
     });
 });
 
@@ -263,6 +273,7 @@ newPostCloseButton.addEventListener("click", function () {
 newPostForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
+  submitBtn.textContent = "Saving...";
   const newPost = {
     link: newPostLink.value,
     name: newPostCaption.value,
@@ -270,29 +281,27 @@ newPostForm.addEventListener("submit", function (evt) {
   api
     .postCard({ name: newPost.name, link: newPost.link })
     .then((data) => {
-      submitBtn.textContent = "Saving...";
-      cards.append(getCardElement(data));
+      cards.prepend(getCardElement(data));
+      evt.target.reset();
       closeModal(newPostModal);
     })
     .catch(console.error)
     .finally(()=>{
       submitBtn.textContent = "Save";
+      disableButton(submitBtn);
     });
-  evt.target.reset();
-  disableButton(evt.target.querySelector(".modal__save-btn"));
 });
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
-  document.addEventListener("keydown", (evt)=>{
-    handleEscape(evt);
-  });
+  document.addEventListener("keydown", handleEscape);
 }
 
-const handleEscape = (evt) => {
+function handleEscape(evt){
   if (evt.key == "Escape") {
     const openedPopup = document.querySelector('.modal_is-opened');
     closeModal(openedPopup);
+    document.removeEventListener("keydown", handleEscape);
   }
 };
 

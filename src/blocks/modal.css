@@ -253,4 +253,9 @@ top:-24px;
     right: -8px;
     opacity: 1;
   }
+
+  .modal__close-btn_type_preview{
+    top: -48px;
+    right:-10px;
+  }
 }
