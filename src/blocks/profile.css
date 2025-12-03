@@ -6,11 +6,40 @@
 }
 
 .profile__image{
-    margin:0 20px 0 0;
     border-radius: 8px;
     height: 190px;
     width: 190px;
     object-fit: cover;
+}
+
+.profile__avatar-container{
+    margin:0 20px 0 0;
+    height: 190px;
+    width: 190px;
+    position:relative;
+}
+
+.profile__avatar-btn{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 8px;
+    visibility:hidden;
+    background-color: #00000080;
+    border:none;
+    padding:0;
+}
+
+.profile__avatar-container:hover .profile__avatar-btn{
+    visibility: visible;
+}
+
+.profile__avatar-edit-container{
+    margin: 0 0 12px 0;
+    padding: 0;
 }
 .profile__column{
     display: flex;
@@ -92,16 +121,41 @@
 
 @media screen and (max-width:568px) {
     .profile{
+        display:flex;
         flex-direction: column;
         text-align: center;
+        justify-content: center;
         align-items: center;
+        padding:0;
+        margin-top:20px;
     }
 
     .profile__image{
         padding:0;
         height: 80px;
         width: 80px;
-        margin-bottom:12px;
+    }
+
+    .profile__avatar-container{
+        height: 80px;
+        width: 80px;
+        font-size:0;
+    }
+
+    .profile__avatar-btn{
+        height: 23px;
+        width: 23px;
+        visibility: visible;
+        top: 52px;
+        left:52px;
+        bottom:0;
+        right:0;
+    }
+    .profile__avatar-edit-container{
+        margin:0;
+        display:flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .profile__column-title{
@@ -121,6 +175,8 @@
     }
 
     .profile__new-post{
+        margin:0 0 20px 0;
         width:288px;
+        align-self: center;
     }
 }
