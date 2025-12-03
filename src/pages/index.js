@@ -253,11 +253,11 @@ newAvatarForm.addEventListener("submit", function (evt) {
       userAvatar.src = data.avatar;
       evt.target.reset();
       closeModal(newAvatarModal);
+      disableButton(submitBtn);
     })
     .catch(console.error)
     .finally(()=>{
       submitBtn.textContent = "Save";
-      disableButton(submitBtn);
     });
 });
 
@@ -284,11 +284,11 @@ newPostForm.addEventListener("submit", function (evt) {
       cards.prepend(getCardElement(data));
       evt.target.reset();
       closeModal(newPostModal);
+      disableButton(submitBtn);
     })
     .catch(console.error)
     .finally(()=>{
       submitBtn.textContent = "Save";
-      disableButton(submitBtn);
     });
 });
 
@@ -301,12 +301,12 @@ function handleEscape(evt){
   if (evt.key == "Escape") {
     const openedPopup = document.querySelector('.modal_is-opened');
     closeModal(openedPopup);
-    document.removeEventListener("keydown", handleEscape);
   }
 };
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", handleEscape);
 }
 
 /* Legacy
